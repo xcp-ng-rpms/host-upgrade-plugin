@@ -1,5 +1,5 @@
 Name: host-upgrade-plugin
-Version: 1.1.5
+Version: 1.1.6
 Release: 1
 Summary: Host upgrade plugin
 License: GPL
@@ -21,6 +21,9 @@ install -D -p prepare_host_upgrade.py %{buildroot}/etc/xapi.d/plugins/prepare_ho
 
 
 %changelog
+* Wed May 30 2018 Simon Rowe <simon.rowe@citrix.com> - 1.1.6-1
+- CA-290443: Use rt_answerfile when serial is in use
+
 * Mon Apr 09 2018 Simon Rowe <simon.rowe@citrix.com> - 1.1.5-1
 - CA-287020: Support RPUs when using iSCSI BFS
 
