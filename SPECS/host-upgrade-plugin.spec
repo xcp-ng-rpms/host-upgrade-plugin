@@ -1,6 +1,6 @@
 Name: host-upgrade-plugin
 Version: 1.1.6
-Release: 1
+Release: 1%{dist}
 Summary: Host upgrade plugin
 License: GPL
 Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/%{name}/archive?at=v%{version}&format=tar.gz&prefix=%{name}-%{version}#/%{name}-%{version}.tar.gz
