@@ -1,9 +1,14 @@
 Name: host-upgrade-plugin
-Version: 1.1.6
-Release: 1%{dist}
+Version: 2.1.0
+Release: 1%{?dist}
 Summary: Host upgrade plugin
 License: GPL
-Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/%{name}/archive?at=v%{version}&format=tar.gz&prefix=%{name}-%{version}#/%{name}-%{version}.tar.gz
+
+Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/host-upgrade-plugin/archive?at=v2.1.0&format=tar.gz&prefix=host-upgrade-plugin-2.1.0#/host-upgrade-plugin-2.1.0.tar.gz
+
+
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XS/repos/host-upgrade-plugin/archive?at=v2.1.0&format=tar.gz&prefix=host-upgrade-plugin-2.1.0#/host-upgrade-plugin-2.1.0.tar.gz) = 5c7365fb183b5ffff70114b0513aa8cc8f648d61
+
 BuildArch: noarch
 BuildRequires: python2-devel
 
@@ -21,6 +26,27 @@ install -D -p prepare_host_upgrade.py %{buildroot}/etc/xapi.d/plugins/prepare_ho
 
 
 %changelog
+* Wed Feb 06 2019 jenniferhe <jennifer.herbert@citrix.com> - 2.1.0-1
+- CP-29836: Add an API to get the version from a URL
+- CP-30501: Add a new API, getDom0DefaultMemory
+- CP-29627: Make compatible with host-installer memory changes
+- CP-23016 Provide errors with underscores
+
+* Tue Jan 15 2019 rossla <ross.lagerwall@citrix.com> - 1.3.0-1
+- CP-23016 Add more specific errors
+- CP-30204: Fix running error
+- CP-30204: Prevent upgrade from releases before 6.x in the RPU plugin
+
+* Fri Oct 12 2018 Simon Rowe <simon.rowe@citrix.com> - 1.2.1-1
+- CA-299552: add support for ramdisk-based upgrades
+
+* Thu Aug 30 2018 Simon Rowe <simon.rowe@citrix.com> - 1.2.0-1
+- CP-29028: add optional updates parameter to RPU plugin
+- CP-29028: check host part of update URL matches main
+- Add missing `return` on error path
+- Add some documentation
+- CP-21760: set one-shot boot entry
+
 * Wed May 30 2018 Simon Rowe <simon.rowe@citrix.com> - 1.1.6-1
 - CA-290443: Use rt_answerfile when serial is in use
 
