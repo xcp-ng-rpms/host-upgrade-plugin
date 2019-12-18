@@ -1,13 +1,13 @@
 Name: host-upgrade-plugin
-Version: 2.1.0
+Version: 2.2.0
 Release: 1%{?dist}
 Summary: Host upgrade plugin
 License: GPL
 
-Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/host-upgrade-plugin/archive?at=v2.1.0&format=tar.gz&prefix=host-upgrade-plugin-2.1.0#/host-upgrade-plugin-2.1.0.tar.gz
+Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/host-upgrade-plugin/archive?at=v2.2.0&format=tar.gz&prefix=host-upgrade-plugin-2.2.0#/host-upgrade-plugin-2.2.0.tar.gz
 
 
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XS/repos/host-upgrade-plugin/archive?at=v2.1.0&format=tar.gz&prefix=host-upgrade-plugin-2.1.0#/host-upgrade-plugin-2.1.0.tar.gz) = 5c7365fb183b5ffff70114b0513aa8cc8f648d61
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XS/repos/host-upgrade-plugin/archive?at=v2.2.0&format=tar.gz&prefix=host-upgrade-plugin-2.2.0#/host-upgrade-plugin-2.2.0.tar.gz) = 74c128154b3fd6c1e0b7ee18718e0af62899056f
 
 BuildArch: noarch
 BuildRequires: python2-devel
@@ -26,6 +26,19 @@ install -D -p prepare_host_upgrade.py %{buildroot}/etc/xapi.d/plugins/prepare_ho
 
 
 %changelog
+* Tue Nov 05 2019 Ross Lagerwall <ross.lagerwall@citrix.com> - 2.2.0-1
+- CA-329206: Get network settings from the correct PIF
+- CP-31507: Add more detailed error codes
+- Pylint cleanup
+
+* Thu Oct 31 2019 Ross Lagerwall <ross.lagerwall@citrix.com> - 2.1.2-1
+- CP-32358: Add HTTPS support
+- CA-329412: Don't reveal if username doesn't have a password
+
+* Thu Oct 24 2019 Ross Lagerwall <ross.lagerwall@citrix.com> - 2.1.1-1
+- Remove code for outdated versions of Python
+- CA-329412: Avoid logging HTTP/FTP passwords
+
 * Wed Feb 06 2019 jenniferhe <jennifer.herbert@citrix.com> - 2.1.0-1
 - CP-29836: Add an API to get the version from a URL
 - CP-30501: Add a new API, getDom0DefaultMemory
