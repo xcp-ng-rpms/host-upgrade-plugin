@@ -1,13 +1,13 @@
 Name: host-upgrade-plugin
-Version: 2.2.0
+Version: 2.2.3
 Release: 1
 Summary: Host upgrade plugin
 License: GPL
 
-Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/host-upgrade-plugin/archive?at=v2.2.0&format=tar.gz&prefix=host-upgrade-plugin-2.2.0#/host-upgrade-plugin-2.2.0.tar.gz
+Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/host-upgrade-plugin/archive?at=v2.2.3&format=tar.gz&prefix=host-upgrade-plugin-2.2.3#/host-upgrade-plugin-2.2.3.tar.gz
 
 
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XS/repos/host-upgrade-plugin/archive?at=v2.2.0&format=tar.gz&prefix=host-upgrade-plugin-2.2.0#/host-upgrade-plugin-2.2.0.tar.gz) = 74c128154b3fd6c1e0b7ee18718e0af62899056f
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XS/repos/host-upgrade-plugin/archive?at=v2.2.3&format=tar.gz&prefix=host-upgrade-plugin-2.2.3#/host-upgrade-plugin-2.2.3.tar.gz) = d93d718dfe00911214409805597795ea4c48748f
 
 BuildArch: noarch
 BuildRequires: python2-devel
@@ -26,6 +26,15 @@ install -D -p prepare_host_upgrade.py %{buildroot}/etc/xapi.d/plugins/prepare_ho
 
 
 %changelog
+* Mon Sep 20 2021 Ross Lagerwall <ross.lagerwall@citrix.com> - 2.2.3-1
+- CA-358877: Do not block upgrades to 8.2.1 because of partition layout
+
+* Fri Feb 26 2021 Ben Sims <ben.sims@citrix.com> - 2.2.2-2
+- CP-36313: Limit partition tests to 8.2 and later.
+
+* Tue Feb 23 2021 Ben Sims <ben.sims@citrix.com> - 2.2.1-1
+- CP-35470: Prevent upgrades which need a legacy partition layout.
+
 * Tue Nov 05 2019 Ross Lagerwall <ross.lagerwall@citrix.com> - 2.2.0-1
 - CA-329206: Get network settings from the correct PIF
 - CP-31507: Add more detailed error codes
