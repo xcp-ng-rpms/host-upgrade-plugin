@@ -1,11 +1,11 @@
-%global package_speccommit b5ddddf4a9e7ec04bb936b6469df14fc7e08e3ca
-%global package_srccommit v2.2.2
+%global package_speccommit 271f0c410b930bf6d07562cbfc190e6325ea448a
+%global package_srccommit v2.2.3
 Name: host-upgrade-plugin
-Version: 2.2.2
+Version: 2.2.3
 Release: 1%{?xsrel}%{?dist}
 Summary: Host upgrade plugin
 License: GPL
-Source0: host-upgrade-plugin-2.2.2.tar.gz
+Source0: host-upgrade-plugin-2.2.3.tar.gz
 BuildArch: noarch
 BuildRequires: python2-devel
 
@@ -23,6 +23,9 @@ install -D -p prepare_host_upgrade.py %{buildroot}/etc/xapi.d/plugins/prepare_ho
 
 
 %changelog
+* Fri Aug 05 2022 Alex Brett <alex.brett@citrix.com> - 2.2.3-1
+- CA-358877: Do not block upgrades to 8.2.1 because of partition layout
+
 * Thu Apr 15 2021 Ross Lagerwall <ross.lagerwall@citrix.com> - 2.2.2-1
 - CP-35470: Prevent upgrades which need a legacy partition layout
 
