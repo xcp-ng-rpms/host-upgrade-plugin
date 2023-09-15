@@ -1,11 +1,12 @@
-%global package_speccommit 271f0c410b930bf6d07562cbfc190e6325ea448a
-%global package_srccommit v2.2.3
+%global package_speccommit d2005bdd7871698dcb367a350eb93119d6bb7227
+%global package_srccommit v2.2.6
+
 Name: host-upgrade-plugin
-Version: 2.2.3
+Version: 2.2.6
 Release: 1%{?xsrel}%{?dist}
 Summary: Host upgrade plugin
 License: GPL
-Source0: host-upgrade-plugin-2.2.3.tar.gz
+Source0: host-upgrade-plugin-2.2.6.tar.gz
 BuildArch: noarch
 BuildRequires: python2-devel
 
@@ -23,6 +24,12 @@ install -D -p prepare_host_upgrade.py %{buildroot}/etc/xapi.d/plugins/prepare_ho
 
 
 %changelog
+* Fri May 26 2023 Sola Zhang <sozhang@tibco.com> - 2.2.6-1
+- CP-41572: Add 'EULA' in file path for backward compatibility
+
+* Tue Mar 21 2023 Sola Zhang <sozhang@tibco.com> - 2.2.5-1
+- CP-41572: Fetch EUA through host-update-plugin
+
 * Fri Aug 05 2022 Alex Brett <alex.brett@citrix.com> - 2.2.3-1
 - CA-358877: Do not block upgrades to 8.2.1 because of partition layout
 
