@@ -1,14 +1,17 @@
-%global package_speccommit d2005bdd7871698dcb367a350eb93119d6bb7227
-%global package_srccommit v2.2.6
+%global package_speccommit ee98c88d7afe62faad0689c93f4444d8f8c4c313
+%global package_srccommit v3.0.1
 
 Name: host-upgrade-plugin
-Version: 2.2.6
+Version: 3.0.1
 Release: 1%{?xsrel}%{?dist}
 Summary: Host upgrade plugin
 License: GPL
-Source0: host-upgrade-plugin-2.2.6.tar.gz
+Source0: host-upgrade-plugin-3.0.1.tar.gz
 BuildArch: noarch
-BuildRequires: python2-devel
+BuildRequires: python3-devel
+Requires: python3-xcp-libs >= 3.0.4-2
+Requires: xapi-core
+Requires: xen-dom0-tools
 
 %description
 Host upgrade plugin.
@@ -24,6 +27,21 @@ install -D -p prepare_host_upgrade.py %{buildroot}/etc/xapi.d/plugins/prepare_ho
 
 
 %changelog
+* Fri Nov 08 2024 Frediano Ziglio <frediano.ziglio@cloud.com> - 3.0.1-1
+- CA-392310: Handle LV mount point from URLs
+- Allow specifying fs type in args for upgrade
+- CP-51969: Add support for "platform" argument
+
+* Thu Jun 06 2024 Frediano Ziglio <frediano.ziglio@cloud.com> - 3.0.0-2
+- Add missing package dependencies
+
+* Mon Feb 05 2024 Stephen Cheng <stephen.cheng@cloud.com> - 3.0.0-1
+- CA-387145: Fix py2->py3 bugs
+- CP-46691: Update python to python3
+
+* Wed May 31 2023 Sola Zhang <sozhang@tibco.com> - 2.2.6-2
+- CP-41922: Rebuild and bump the release number
+
 * Fri May 26 2023 Sola Zhang <sozhang@tibco.com> - 2.2.6-1
 - CP-41572: Add 'EULA' in file path for backward compatibility
 
