@@ -1,12 +1,12 @@
-%global package_speccommit ee98c88d7afe62faad0689c93f4444d8f8c4c313
-%global package_srccommit v3.0.1
+%global package_speccommit 8872085c65b0056523963fcdb934307df5521a9d
+%global package_srccommit v3.0.3
 
 Name: host-upgrade-plugin
-Version: 3.0.1
+Version: 3.0.3
 Release: 1%{?xsrel}%{?dist}
 Summary: Host upgrade plugin
 License: GPL
-Source0: host-upgrade-plugin-3.0.1.tar.gz
+Source0: host-upgrade-plugin-3.0.3.tar.gz
 BuildArch: noarch
 BuildRequires: python3-devel
 Requires: python3-xcp-libs >= 3.0.4-2
@@ -27,6 +27,12 @@ install -D -p prepare_host_upgrade.py %{buildroot}/etc/xapi.d/plugins/prepare_ho
 
 
 %changelog
+* Mon Jan 06 2025 Stephen Cheng <stephen.cheng@cloud.com> - 3.0.3-1
+- CA-404163: Parse grub.cfg for the xen command-line during upgrade
+
+* Thu Dec 19 2024 Stephen Cheng <stephen.cheng@cloud.com> - 3.0.2-1
+- CA-403628: Remove the logic of checking the existence of 'isolinux.cfg'
+
 * Fri Nov 08 2024 Frediano Ziglio <frediano.ziglio@cloud.com> - 3.0.1-1
 - CA-392310: Handle LV mount point from URLs
 - Allow specifying fs type in args for upgrade
