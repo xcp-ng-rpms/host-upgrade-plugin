@@ -1,15 +1,15 @@
-%global package_speccommit c20a68f5bee32f8eea7e7e913795ffadb6d78394
-%global package_srccommit v3.1.0
+%global package_speccommit eff7c7d22547b6b95ec2e1ad39c48e9152bae320
+%global package_srccommit v3.1.1
 
 Name: host-upgrade-plugin
-Version: 3.1.0
+Version: 3.1.1
 Release: 1%{?xsrel}%{?dist}
 Summary: Host upgrade plugin
 License: GPL
-Source0: host-upgrade-plugin-3.1.0.tar.gz
+Source0: host-upgrade-plugin-3.1.1.tar.gz
 BuildArch: noarch
 BuildRequires: python3-devel
-Requires: python3-xcp-libs >= 3.0.4-2
+Requires: python3-xcp-libs >= 3.0.8-1
 Requires: xapi-core
 Requires: xen-dom0-tools
 
@@ -35,6 +35,10 @@ install -D -p prepare_host_upgrade.py %{buildroot}/etc/xapi.d/plugins/prepare_ho
 
 
 %changelog
+* Fri Aug 01 2025 Ross Lagerwall <ross.lagerwall@citrix.com> - 3.1.1-1
+- CP-308409: Upgrade precheck for use of Linux bridge
+- CA-414565: Depend on a newer version of python libs
+
 * Thu May 29 2025 Lin Liu <Lin.Liu01@cloud.com> - 3.1.0-1
 - CP-53580: Ensure the plugin is up to date
 - CP-54684: Prevent upgrading if XS8 has newer feature than XS9
