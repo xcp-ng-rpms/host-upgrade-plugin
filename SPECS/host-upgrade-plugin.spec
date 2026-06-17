@@ -1,15 +1,15 @@
-%global package_speccommit 49ff41cd3ab0b39c3eaa349189bda17fd40a4ac5
-%global package_srccommit v3.1.2
+%global package_speccommit d1340349f95d646bb0c3ba9e46a3f39516e597e5
+%global package_srccommit v3.1.5
 
 Name: host-upgrade-plugin
-Version: 3.1.2
+Version: 3.1.5
 Release: 1%{?xsrel}%{?dist}
 Summary: Host upgrade plugin
 License: GPL
-Source0: host-upgrade-plugin-3.1.2.tar.gz
+Source0: host-upgrade-plugin-3.1.5.tar.gz
 BuildArch: noarch
 BuildRequires: python3-devel
-Requires: python3-xcp-libs >= 3.0.8-1
+Requires: python3-xcp-libs >= 3.0.9-1
 Requires: xapi-core
 Requires: xen-dom0-tools
 
@@ -39,6 +39,12 @@ install -D -p prepare_host_upgrade.py %{buildroot}/etc/xapi.d/plugins/prepare_ho
 
 
 %changelog
+* Fri Oct 10 2025 Ross Lagerwall <ross.lagerwall@citrix.com> - 3.1.5-1
+- CP-308804: Always set device_mapper_multipath parameter
+
+* Fri Sep 26 2025 Chunjie Zhu <chunjie.zhu@citrix.com> - 3.1.4-1
+- CP-54481: support dmv query and selection in rpu
+
 * Fri Aug 15 2025 Gerald Elder-Vass <gerald.elder-vass@cloud.com> - 3.1.2-1
 - CA-414541: Skip host upgrade checks if they do not apply to the target version
 
