@@ -1,12 +1,12 @@
-%global package_speccommit 8e2f2094e8b0a42849f802037c56e44f555532bd
-%global package_srccommit v3.1.8
+%global package_speccommit b2653432126bb772b8135317f29a65835bce81a3
+%global package_srccommit v3.1.9
 
 Name: host-upgrade-plugin
-Version: 3.1.8
+Version: 3.1.9
 Release: 1%{?xsrel}%{?dist}
 Summary: Host upgrade plugin
 License: GPL
-Source0: host-upgrade-plugin-3.1.8.tar.gz
+Source0: host-upgrade-plugin-3.1.9.tar.gz
 BuildArch: noarch
 BuildRequires: python3-devel
 Requires: python3-xcp-libs >= 3.0.9-1
@@ -39,6 +39,10 @@ install -D -p prepare_host_upgrade.py %{buildroot}/etc/xapi.d/plugins/prepare_ho
 
 
 %changelog
+* Wed Nov 26 2025 Chunjie Zhu <chunjie.zhu@citrix.com> - 3.1.9-1
+- CA-421010: fix cannot get multiple variants bug
+- update source url
+
 * Tue Nov 4 2025 Chunjie Zhu <chunjie.zhu@citrix.com> - 3.1.8-1
 - CP-54481: rpu plugin update for dmv
 
