@@ -1,12 +1,12 @@
-%global package_speccommit 8f4d1a2b4952cec640f5f3c1e886e7fa97c92299
-%global package_srccommit v3.1.14
+%global package_speccommit 6f589b59fe71f1bbaf8116664bb36a42e2e0f7b4
+%global package_srccommit v3.1.16
 
 Name: host-upgrade-plugin
-Version: 3.1.14
+Version: 3.1.16
 Release: 1%{?xsrel}%{?dist}
 Summary: Host upgrade plugin
 License: GPL
-Source0: host-upgrade-plugin-3.1.14.tar.gz
+Source0: host-upgrade-plugin-3.1.16.tar.gz
 BuildArch: noarch
 BuildRequires: python3-devel
 Requires: python3-xcp-libs >= 3.0.9-1
@@ -36,9 +36,16 @@ install -D -p prepare_host_upgrade.py %{buildroot}/etc/xapi.d/plugins/prepare_ho
 %if 0%{?xenserver} < 9
 %exclude /etc/xapi.d/plugins/__pycache__/*.pyc
 %endif
-
+%doc docs/interface.md
 
 %changelog
+* Tue Apr 14 2026 Alex Brett <alex.brett@citrix.com> - 3.1.16-1
+- CA-425810: Add a new scripts argument
+- CP-312061: Add interface.md documentation
+
+* Fri Mar 20 2026 Stephen Cheng <stephen.cheng@citrix.com> - 3.1.15-1
+- CA-375347: Add API to get crash kernel memory by version
+
 * Tue Mar 03 2026 Alex Brett <alex.brett@citrix.com> - 3.1.14-1
 - CP-311717: Check for use of SHA-1 certificates
 
