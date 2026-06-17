@@ -1,12 +1,12 @@
-%global package_speccommit d1340349f95d646bb0c3ba9e46a3f39516e597e5
-%global package_srccommit v3.1.5
+%global package_speccommit dd2e9f6833edbb8118b8d0fd7b5076fb16dc5a66
+%global package_srccommit v3.1.7
 
 Name: host-upgrade-plugin
-Version: 3.1.5
+Version: 3.1.7
 Release: 1%{?xsrel}%{?dist}
 Summary: Host upgrade plugin
 License: GPL
-Source0: host-upgrade-plugin-3.1.5.tar.gz
+Source0: host-upgrade-plugin-3.1.7.tar.gz
 BuildArch: noarch
 BuildRequires: python3-devel
 Requires: python3-xcp-libs >= 3.0.9-1
@@ -39,6 +39,15 @@ install -D -p prepare_host_upgrade.py %{buildroot}/etc/xapi.d/plugins/prepare_ho
 
 
 %changelog
+* Wed Oct 22 2025 Lin Liu <lin.liu01@cloud.com> - 3.1.7-1
+- CP-310383: Prevent upgrade with Legacy Nvidia vGPUs to XS9
+
+* Sat Oct 18 2025 Lin Liu <Lin.Liu01@cloud.com> - 3.1.6-2
+- Rebuild for karma test
+
+* Thu Oct 16 2025 Chunjie Zhu <chunjie.zhu@citrix.com> - 3.1.6-1
+- CA-418527: disable dmv function temporarily
+
 * Fri Oct 10 2025 Ross Lagerwall <ross.lagerwall@citrix.com> - 3.1.5-1
 - CP-308804: Always set device_mapper_multipath parameter
 
