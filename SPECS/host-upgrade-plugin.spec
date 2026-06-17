@@ -1,12 +1,12 @@
-%global package_speccommit f9f3a3605e5bd53c1d9146235ae4cfd700f75a89
-%global package_srccommit v3.1.12
+%global package_speccommit 8f4d1a2b4952cec640f5f3c1e886e7fa97c92299
+%global package_srccommit v3.1.14
 
 Name: host-upgrade-plugin
-Version: 3.1.12
+Version: 3.1.14
 Release: 1%{?xsrel}%{?dist}
 Summary: Host upgrade plugin
 License: GPL
-Source0: host-upgrade-plugin-3.1.12.tar.gz
+Source0: host-upgrade-plugin-3.1.14.tar.gz
 BuildArch: noarch
 BuildRequires: python3-devel
 Requires: python3-xcp-libs >= 3.0.9-1
@@ -39,6 +39,12 @@ install -D -p prepare_host_upgrade.py %{buildroot}/etc/xapi.d/plugins/prepare_ho
 
 
 %changelog
+* Tue Mar 03 2026 Alex Brett <alex.brett@citrix.com> - 3.1.14-1
+- CP-311717: Check for use of SHA-1 certificates
+
+* Tue Feb 24 2026 Alex Brett <alex.brett@citrix.com> - 3.1.13-1
+- CA-424023: Filter PCI records to only those for current hosts
+
 * Mon Feb 09 2026 Chunjie Zhu <chunjie.zhu@citrix.com> - 3.1.12-1
 - CA-422621: fix DMV data access error
 
