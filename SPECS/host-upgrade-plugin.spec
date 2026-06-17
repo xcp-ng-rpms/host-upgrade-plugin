@@ -1,12 +1,12 @@
-%global package_speccommit eff7c7d22547b6b95ec2e1ad39c48e9152bae320
-%global package_srccommit v3.1.1
+%global package_speccommit 49ff41cd3ab0b39c3eaa349189bda17fd40a4ac5
+%global package_srccommit v3.1.2
 
 Name: host-upgrade-plugin
-Version: 3.1.1
+Version: 3.1.2
 Release: 1%{?xsrel}%{?dist}
 Summary: Host upgrade plugin
 License: GPL
-Source0: host-upgrade-plugin-3.1.1.tar.gz
+Source0: host-upgrade-plugin-3.1.2.tar.gz
 BuildArch: noarch
 BuildRequires: python3-devel
 Requires: python3-xcp-libs >= 3.0.8-1
@@ -20,6 +20,10 @@ Host upgrade plugin.
 
 %prep
 %autosetup -p1
+
+%check
+cd test
+python3 -m unittest discover .
 
 %install
 install -D -p prepare_host_upgrade.py %{buildroot}/etc/xapi.d/plugins/prepare_host_upgrade.py
@@ -35,6 +39,9 @@ install -D -p prepare_host_upgrade.py %{buildroot}/etc/xapi.d/plugins/prepare_ho
 
 
 %changelog
+* Fri Aug 15 2025 Gerald Elder-Vass <gerald.elder-vass@cloud.com> - 3.1.2-1
+- CA-414541: Skip host upgrade checks if they do not apply to the target version
+
 * Fri Aug 01 2025 Ross Lagerwall <ross.lagerwall@citrix.com> - 3.1.1-1
 - CP-308409: Upgrade precheck for use of Linux bridge
 - CA-414565: Depend on a newer version of python libs
