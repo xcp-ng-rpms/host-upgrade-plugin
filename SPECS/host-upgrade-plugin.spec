@@ -1,12 +1,12 @@
-%global package_speccommit b2653432126bb772b8135317f29a65835bce81a3
-%global package_srccommit v3.1.9
+%global package_speccommit f9f3a3605e5bd53c1d9146235ae4cfd700f75a89
+%global package_srccommit v3.1.12
 
 Name: host-upgrade-plugin
-Version: 3.1.9
+Version: 3.1.12
 Release: 1%{?xsrel}%{?dist}
 Summary: Host upgrade plugin
 License: GPL
-Source0: host-upgrade-plugin-3.1.9.tar.gz
+Source0: host-upgrade-plugin-3.1.12.tar.gz
 BuildArch: noarch
 BuildRequires: python3-devel
 Requires: python3-xcp-libs >= 3.0.9-1
@@ -39,6 +39,19 @@ install -D -p prepare_host_upgrade.py %{buildroot}/etc/xapi.d/plugins/prepare_ho
 
 
 %changelog
+* Mon Feb 09 2026 Chunjie Zhu <chunjie.zhu@citrix.com> - 3.1.12-1
+- CA-422621: fix DMV data access error
+
+* Mon Feb 09 2026 Lin Liu <lin.liu01@citrix.com> - 3.1.11-1
+- CA-423692: repoquery can not support nfs url
+
+* Tue Jan 27 2026 Fei Su <fei.su@citrix.com> - 3.1.10-1
+- CP-310570 Block Marvell/QLogic FastLinQ devices from RPU
+- Use python3 explicitly for the revert script
+- CP-310699: DMV RPU extend functionality
+- CP-53030: Support RPU from a release that supports Secure Boot
+- CP-53030: Fix missing entry_format
+
 * Wed Nov 26 2025 Chunjie Zhu <chunjie.zhu@citrix.com> - 3.1.9-1
 - CA-421010: fix cannot get multiple variants bug
 - update source url
