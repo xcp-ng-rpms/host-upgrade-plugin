@@ -1,12 +1,12 @@
-%global package_speccommit dd2e9f6833edbb8118b8d0fd7b5076fb16dc5a66
-%global package_srccommit v3.1.7
+%global package_speccommit 8e2f2094e8b0a42849f802037c56e44f555532bd
+%global package_srccommit v3.1.8
 
 Name: host-upgrade-plugin
-Version: 3.1.7
+Version: 3.1.8
 Release: 1%{?xsrel}%{?dist}
 Summary: Host upgrade plugin
 License: GPL
-Source0: host-upgrade-plugin-3.1.7.tar.gz
+Source0: host-upgrade-plugin-3.1.8.tar.gz
 BuildArch: noarch
 BuildRequires: python3-devel
 Requires: python3-xcp-libs >= 3.0.9-1
@@ -39,6 +39,9 @@ install -D -p prepare_host_upgrade.py %{buildroot}/etc/xapi.d/plugins/prepare_ho
 
 
 %changelog
+* Tue Nov 4 2025 Chunjie Zhu <chunjie.zhu@citrix.com> - 3.1.8-1
+- CP-54481: rpu plugin update for dmv
+
 * Wed Oct 22 2025 Lin Liu <lin.liu01@cloud.com> - 3.1.7-1
 - CP-310383: Prevent upgrade with Legacy Nvidia vGPUs to XS9
 
